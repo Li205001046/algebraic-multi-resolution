@@ -1,4 +1,5 @@
 Algebraic-multi-resolution contains the data and plot code of MT apparent resistivity and phase for the following three models.
+
 Three-layered earth model ---------------Response_layer_model.m
 Dublin Test Model 1 (DTM1)---------------Response_DTM1.m
 Realistic terrain model------------------Response_realistic_model.m
