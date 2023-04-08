@@ -1,4 +1,4 @@
-Algebraic-multi-resolution contains the data and plot code of MT apparent resistivity and phase for the following three models.
+Algebraic-multi-resolution contains the data and plot codes of MT apparent resistivity and phase for the following three models.
 
 Three-layered earth model ---------------Response_layer_model.m
 
@@ -18,4 +18,4 @@ https://www.researchgate.net/profile/Jianxin-Liu-3
 
 Usage：
 
-Download MATLAB R2021-2023, open the file and run.
+After downloading MATLAB, add the file to the path and run it.
