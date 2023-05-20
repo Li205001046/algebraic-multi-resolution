@@ -31,11 +31,12 @@ set(gca,'LooseInset',get(gca,'TightInset'))
 subplot(2,3,1)
 H(1)=subplot(2,3,1);    
 PPP=get(H(1),'pos');      
-PPP(1)=PPP(1)-0.06;       
-PPP(2)=PPP(2)-0.015;       
-PPP(3)=PPP(3)+0.02;      
-PPP(4)=PPP(4)+0.04;      
+PPP(1)=PPP(1)-0.06;      %宽向左边延展0.04
+PPP(2)=PPP(2)-0.015;      %高向下方延展0.03
+PPP(3)=PPP(3)+0.02;      %宽向右边延展0.04
+PPP(4)=PPP(4)+0.04;      %高向上方延展0.03
 set(H(1),'pos',PPP)  
+
 
 semilogy(x,r12,'-* r','LineWidth',1.5,'MarkerSize', 15)
 hold on
@@ -45,11 +46,11 @@ set(gca,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');
 h1=ylabel('App.resistivity(\Omega\cdotm)');
 set(gca,'xticklabel','');
 h2=text(-19,650,'(a) XY');
-set(h2,'FontWeight','bold','FontSize',28); 
-set(h2,'FontName','Times New Roman'); 
+set(h2,'FontWeight','bold','FontSize',28);% 设置加粗字体，字号60
+set(h2,'FontName','Times New Roman');% 设置字体
 h3=legend('SG','MRS')
-set(h3,'FontWeight','bold','FontSize',24); 
-set(h3,'FontName','Times New Roman'); 
+set(h3,'FontWeight','bold','FontSize',24);% 设置加粗字体，字号60
+set(h3,'FontName','Times New Roman');% 设置字体
 
 axis([-20 20 1 1000])
 set(gca, 'yTick', [0.1 1 10 100 1000])
@@ -61,63 +62,73 @@ set(gca, 'LineWidth',2)
 subplot(2,3,2)
 H(2)=subplot(2,3,2);    
 PPP=get(H(2),'pos');      
-PPP(1)=PPP(1)-0.03;       
-PPP(2)=PPP(2)-0.015;      
-PPP(3)=PPP(3)+0.025;      
-PPP(4)=PPP(4)+0.04;       
+PPP(1)=PPP(1)-0.03;      %宽向左边延展0.04
+PPP(2)=PPP(2)-0.015;      %高向下方延展0.03
+PPP(3)=PPP(3)+0.025;      %宽向右边延展0.04
+PPP(4)=PPP(4)+0.04;      %高向上方延展0.03
 set(H(2),'pos',PPP)  
+
 
 semilogy(x,r21,'-* b','LineWidth',1.5,'MarkerSize', 15)
 hold on
 semilogy(x,c21,'o b','LineWidth',1.5,'MarkerSize', 15)
 
+
 set(gca,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');
 h1=ylabel('App.resistivity(\Omega\cdotm)');
 h2=text(-19,650,'(b) YX');
-set(h2,'FontWeight','bold','FontSize',28,'FontName','Times New Roman'); 
+set(h2,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');% 设置加粗字体，字号60
 
 set(gca,'xticklabel','');
 axis([-20 20 1 1000])
 set(gca, 'yTick', [1 10 100 1000])
+set(gca, 'xTick', [-20 -10 0 10 20])
 set(gca,'TickLength',[0.03 0])
 set(gca, 'LineWidth',2)
+
+
 
 subplot(2,3,3)
 H(3)=subplot(2,3,3);    
 PPP=get(H(3),'pos');      
-PPP(1)=PPP(1)+0.01;       
-PPP(2)=PPP(2)-0.015;       
-PPP(3)=PPP(3)+0.02;      
-PPP(4)=PPP(4)+0.04;       
+PPP(1)=PPP(1)+0.01;      %宽向左边延展0.04
+PPP(2)=PPP(2)-0.015;      %高向下方延展0.03
+PPP(3)=PPP(3)+0.02;      %宽向右边延展0.04
+PPP(4)=PPP(4)+0.04;      %高向上方延展0.03
 set(H(3),'pos',PPP)  
 
-plot(x,a11,'-x r','LineWidth',1.5,'MarkerSize', 15)
+plot(x,a11,'o r','LineWidth',1.5,'MarkerSize', 15)
 hold on
-plot(x,a12,'-* b','LineWidth',1.5,'MarkerSize', 15)
+plot(x,a12,'x r','LineWidth',1.5,'MarkerSize', 15)
+
 
 h1=ylabel('Rel.difference (%)');
 set(gca,'FontWeight','bold','FontSize',26,'FontName','Times New Roman');
+% h3=legend('XY of difference','YX of difference')
 h3=legend('XY','YX')
-set(h3,'FontWeight','bold','FontSize',24); 
-set(h3,'FontName','Times New Roman');
+set(h3,'FontWeight','bold','FontSize',24);% 设置加粗字体，字号60
+set(h3,'FontName','Times New Roman');% 设置字体
 
-h2=text(-19,3.28,'(c)');
-set(h2,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');
+h2=text(-19,3.3,'(c)');
+set(h2,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');% 设置加粗字体，字号60
 
 axis([-20 20 0 3.5])
 set(gca, 'xTick', [-20 -10 0 10 20])
 set(gca,'xticklabel','');
 set(gca,'TickLength',[0.03 0])
 set(gca, 'LineWidth',2)
+% axis([-40 40 0 4])
+% set(gca, 'yTick', [0 1 2 3 4])
 
 subplot(2,3,4)
 H(4)=subplot(2,3,4);
 PPP=get(H(4),'pos'); 
-PPP(1)=PPP(1)-0.06;      
-PPP(2)=PPP(2)+0.015;     
-PPP(3)=PPP(3)+0.02;      
-PPP(4)=PPP(4)+0.03;      
+PPP(1)=PPP(1)-0.06;      %宽向左边延展0.04
+PPP(2)=PPP(2)+0.015;      %高向下方延展0.03
+PPP(3)=PPP(3)+0.02;      %宽向右边延展0.04
+PPP(4)=PPP(4)+0.03;      %高向上方延展0.03
 set(H(4),'pos',PPP)  
+
 
 plot(x,p12,'-* r','LineWidth',1.5,'MarkerSize', 15)
 hold on
@@ -129,9 +140,9 @@ axis([-20 20 20 100])
 set(gca, 'xTick', [-20 -10 0 10 20])
 
 set(gca,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');
-h3=text(-19,95,'(d) XY');
-set(h3,'FontWeight','bold','FontSize',28);
-set(h3,'FontName','Times New Roman');
+h3=text(-19,93.6,'(d) XY');
+set(h3,'FontWeight','bold','FontSize',28);% 设置加粗字体，字号60
+set(h3,'FontName','Times New Roman');% 设置字体
 
 set(gca,'TickLength',[0.03 0])
 set(gca, 'LineWidth',2)
@@ -139,11 +150,12 @@ set(gca, 'LineWidth',2)
 subplot(2,3,5)
 H(5)=subplot(2,3,5);    
 PPP=get(H(5),'pos');      
-PPP(1)=PPP(1)-0.03;      
-PPP(2)=PPP(2)+0.015;     
-PPP(3)=PPP(3)+0.025;     
-PPP(4)=PPP(4)+0.03;     
+PPP(1)=PPP(1)-0.03;      %宽向左边延展0.04
+PPP(2)=PPP(2)+0.015;      %高向下方延展0.03
+PPP(3)=PPP(3)+0.025;      %宽向右边延展0.04
+PPP(4)=PPP(4)+0.03;      %高向上方延展0.03
 set(H(5),'pos',PPP) 
+
 
 plot(x,p21,'-* b','LineWidth',1.5,'MarkerSize', 15)
 hold on
@@ -153,36 +165,39 @@ h1=ylabel('Phase(\circ)');
 h2=xlabel('y(km)');
 axis([-20 20 200 280])
 set(gca, 'yTick', [200 220 240 260 280])
+set(gca, 'xTick', [-20 -10 0 10 20])
 
 set(gca,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');
-h3=text(-19,275.4,'(e) YX');
-set(h3,'FontWeight','bold','FontSize',28);
-set(h3,'FontName','Times New Roman');
+h3=text(-19,274,'(e) YX');
+set(h3,'FontWeight','bold','FontSize',28);% 设置加粗字体，字号60
+set(h3,'FontName','Times New Roman');% 设置字体
 
 set(gca,'TickLength',[0.03 0])
 set(gca, 'LineWidth',2)
 
+
+
 subplot(2,3,6)
 H(6)=subplot(2,3,6);    
 PPP=get(H(6),'pos');      
-PPP(1)=PPP(1)+0.01;      
-PPP(2)=PPP(2)+0.015;     
-PPP(3)=PPP(3)+0.02;     
-PPP(4)=PPP(4)+0.03;      
+PPP(1)=PPP(1)+0.01;      %宽向左边延展0.04
+PPP(2)=PPP(2)+0.015;      %高向下方延展0.03
+PPP(3)=PPP(3)+0.02;      %宽向右边延展0.04
+PPP(4)=PPP(4)+0.03;      %高向上方延展0.03
 set(H(6),'pos',PPP) 
 
-plot(x,b11,'-x r','LineWidth',1.5,'MarkerSize', 15)
+plot(x,b11,'o r','LineWidth',1.5,'MarkerSize', 15)
 hold on
-plot(x,b12,'-* b','LineWidth',1.5,'MarkerSize', 15)
+plot(x,b12,'x r','LineWidth',1.5,'MarkerSize', 15)
 
-h1=ylabel('Phase difference (¡ã)');
-h2=xlabel('y(km)');
 set(gca,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');
+h1=ylabel('Phase difference (°)');
+h2=xlabel('y(km)');
+h3=text(-19,2.22,'(f)');
+set(h3,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');% 设置加粗字体，字号60
 
-h2=text(-19,2.26,'(f)');
-set(h2,'FontWeight','bold','FontSize',28,'FontName','Times New Roman');
 axis([-20 20 0 2.4])
 set(gca, 'xTick', [ -20 -10 0 10 20])
-
+% set(gca,'xticklabel','');
 set(gca,'TickLength',[0.03 0])
-set(gca, 'LineWidth',3)
+set(gca, 'LineWidth',2)
